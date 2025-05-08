@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CHATLLM</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        button {
+            background-color: #007bff; /* Updated button color */
+            color: rgb(24, 20, 20);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .video-container video {
+            max-height: 500px; /* Limit the height of the video */
+            width: 100%; /* Maintain full width */
+            object-fit: cover; /* Ensure the video covers the container */
+        }
+        .container {
+            margin: 0; /* Removed all extra spacing */
+            padding: 0; /* Ensured no padding adds to the spacing */
+        }
+        .video-container {
+            margin-bottom: 10px; /* Reduced spacing below the video */
+        }
+        .content {
+            position: relative;
+            top: auto; /* Reset positioning */
+            margin-top: 10px; /* Add spacing below the video */
+            margin-bottom: 0; /* Removed extra spacing below the content */
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Retain shadow for readability */
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 4rem; /* Increased font size for the heading */
+            margin-bottom: 5px; /* Minimized spacing below the heading */
+        }
+        .content p {
+            font-size: 1.5rem; /* Increased font size for paragraphs */
+            margin-bottom: 5px; /* Minimized spacing between paragraphs */
+        }
+        form {
+            margin: 0 auto; /* Center the form */
+            padding: 0; /* Ensured no padding adds to the spacing */
+            width: 60%; /* Increased form width */
+        }
+        form input, form textarea {
+            margin-bottom: 10px; /* Adjusted spacing between form fields */
+            width: 100%; /* Full width for inputs */
+            font-size: 1rem; /* Increased font size for inputs */
+        }
+        form input {
+            height: 2.5rem; /* Increased height for inputs */
+        }
+        form textarea {
+            height: auto; /* Adjusted height for textarea */
+        }
+        form button {
+            font-size: 1.2rem; /* Increased font size for button */
+            padding: 10px 20px; /* Adjusted padding for button */
+        }
+        .faq-item, .policy-item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #000000;
+        }
+
+        .faq-item h3, .policy-item h3 {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+            margin-bottom: 10px; /* Added spacing below expanded content */
+            font-size: 1rem;
+            color: #000; /* Changed text color to black for better visibility */
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+    </style>
+    <script>
+        document.addEventListener('scroll', () => {
+            const logo = document.querySelector('.header-left img');
+            if (window.scrollY > 50) {
+                logo.classList.add('scrolled');
+            } else {
+                logo.classList.remove('scrolled');
+            }
+        });
+
+        function toggleFaq(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                icon.textContent = '+';
+            } else {
+                content.style.display = 'block';
+                icon.textContent = '-';
+            }
+        }
+    </script>
+    <script>
+        // Simulate a login check
+        const isLoggedIn = false; // Change this to true if the user is logged in
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatLink = document.querySelector('a[href="chat.html"]');
+            chatLink.addEventListener('click', (event) => {
+                if (!isLoggedIn) {
+                    event.preventDefault();
+                    alert('You must log in or sign up to access the chat.');
+                    window.location.href = 'sign-in.html';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+            <div style="margin-left: 10px;">
+                <span style="font-size: 1.5rem; font-weight: bold; color: #fff; margin: 0 30px;">CHATLLM</span><br>
+                <span style="font-size: 1rem; color: #fff; margin: 0 30px;">Make AI yours</span>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="llm.html">LLM</a>
+            <a href="chat.html">Chat</a>
+            <a href="sign-in.html" class="sign-in-button" style="background-color: #007bff; color: white; padding: 5px 10px; border-radius: 5px; text-decoration: none;">Sign In</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="videos/contact us.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content">
+                <h1>Contact Us</h1>
+                <p>If you have any questions, feedback, or inquiries, feel free to reach out to us!</p>
+                <p>You can contact us via email at <a href="mailto:support@chatllm.com" style="color: #ffcc00;">support@chatllm.com</a> or fill out the form below:</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form">
+            <div class="container">
+                <h2 style="font-size: 2rem;">Get in Touch</h2>
+                <form action="#" method="post">
+                    <label for="name" style="font-size: 1.2rem;">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email" style="font-size: 1.2rem;">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="message" style="font-size: 1.2rem;">Message:</label><br>
+                    <textarea id="message" name="message" rows="6" required></textarea><br><br>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Additional Details Section -->
+        <section class="additional-details">
+            <div class="container">
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-item">
+                        <h3 onclick="toggleFaq(this)">What services do you offer? <span class="toggle-icon">+</span></h3>
+                        <p class="faq-content">We provide advanced language models, chat solutions, and AI integration services.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 onclick="toggleFaq(this)">How can I get started? <span class="toggle-icon">+</span></h3>
+                        <p class="faq-content">You can sign up for a free account or contact us for a personalized demo.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 onclick="toggleFaq(this)">Do you offer customer support? <span class="toggle-icon">+</span></h3>
+                        <p class="faq-content">Yes, we provide 24/7 customer support to assist you with any queries.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>Shipping and Return Policy</h2>
+                    <div class="policy-item">
+                        <h3 onclick="toggleFaq(this)">Shipping Policy <span class="toggle-icon">+</span></h3>
+                        <p class="faq-content">We ensure fast and reliable shipping for all our products. Orders are processed within 1-2 business days and delivered within 5-7 business days.</p>
+                    </div>
+                    <div class="policy-item">
+                        <h3 onclick="toggleFaq(this)">Return Policy <span class="toggle-icon">+</span></h3>
+                        <p class="faq-content">If you are not satisfied with your purchase, you can return it within 30 days for a full refund. The product must be in its original condition and packaging. For more details, please visit our <a href="#">Shipping & Return</a> page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-links">
+        <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Careers</a>
+            <a href="#">Newsroom</a>
+            <a href="#">Pressroom</a>
+        </div>
+        <div>
+            <h4>ChatLLM</h4>
+            <a href="#">Get ChatLLM</a>
+            <a href="llm.html">Downloads</a>
+            <a href="chat.html">Chat</a>
+            <a href="about.html">Partner with Us</a>
+        </div>
+        <div>
+            <h4>Our AI</h4>
+            <a href="llm.html">Platform Apps</a>
+            <a href="contact.html">FAQ</a>
+            <a href="contact.html">Shipping & Return</a>
+            <a href="contact.html">Customer Support</a>
+        </div>
+        <div>
+            <h4>Developer</h4>
+            <a href="llm">Downloads</a>
+            <a href="#">CHATLLM™ SDK</a>
+            <a href="#">CHATLLM SDK Guide</a>
+            <a href="readme.md">Documentation</a> <!-- Added Documentation link -->
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Forum</a>
+            <a href="contact.html">Warranty</a>
+        </div>
+    </div>
+    <footer class="footer-bottom">
+        <p>© 2024 CHATLLM Inc. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@milks0ju314">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=100022445090749">Facebook</a>
+            <a href="https://www.twitch.tv/comfyws">Twitch</a>
+            <a href="https://open.spotify.com/user/31usixp2lbqyluyjpdaya32kw6yu">Spotify</a>
+            <a href="https://www.instagram.com/smoooth.y?igsh=cTB4d3ZreGRwa25x">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

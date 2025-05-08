@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CHATLLM</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Additional styles for the grid layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted min width for better spacing */
+            gap: 40px; /* Increased gap between grid items */
+            margin: 40px 20px; /* Increased margin around the grid */
+        }
+        .grid-item {
+            background-color: rgba(255, 204, 0, 0.2); /* Light background for grid items */
+            border: 1px solid #ffcc00; /* Border color */
+            border-radius: 8px;
+            padding: 40px; /* Increased padding inside grid items */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .grid-item:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        /* Add spacing between header and body */
+        .container {
+            margin-top: 700px; /* Added margin to create space below the header */
+        }
+        /* Consistent text color */
+        h1, h2, h3, h4, p {
+            color: #fff; /* Ensure all text is white for consistency */ 
+            margin: 0 0 20px; /* Added margin for spacing between paragraphs and headers */
+        }
+        /* Footer styles */
+        .footer-links {
+            margin-top: 1200px;
+            display: flex;
+            flex-wrap: wrap; /* Allow footer links to wrap on smaller screens */
+            justify-content: space-between;
+            padding: 20px; /* Padding around footer links */
+            background-color: rgba(17, 17, 17, 0.9); /* Background color for footer links */
+        }
+        .footer-links div {
+            margin-right: 20px; /* Space between footer sections */
+            flex: 1 1 200px; /* Allow footer sections to grow and shrink */
+            margin-bottom: 20px; /* Space below each footer section */
+        }
+        .footer-links h4 {
+            margin-bottom: 10px; /* Space below the section title */
+        }
+        /* Add spacing between body and footer */
+        .footer-bottom {
+            margin-top: 40px; /* Added margin to create space above the footer */
+        }
+    
+        /* Button styles */
+        button, .download-button {
+            background-color: #007bff; /* Updated button color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover, .download-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid-container {
+                margin: 20px; /* Reduce margin on smaller screens */
+            }
+            .footer-links {
+                flex-direction: column; /* Stack footer sections vertically on small screens */
+            }
+            .footer-links div {
+                margin-right: 0; /* Remove right margin for stacked layout */
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('scroll', () => {
+            const logo = document.querySelector('.header-left img');
+            if (window.scrollY > 50) {
+                logo.classList.add('scrolled');
+            } else {
+                logo.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script>
+        // Simulate a login check
+        const isLoggedIn = false; // Change this to true if the user is logged in
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatLink = document.querySelector('a[href="chat.html"]');
+            chatLink.addEventListener('click', (event) => {
+                if (!isLoggedIn) {
+                    event.preventDefault();
+                    alert('You must log in or sign up to access the chat.');
+                    window.location.href = 'sign-in.html';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+            <div style="margin-left: 10px;">
+                <span style="font-size: 1.5rem; font-weight: bold; color: #fff; margin: 0 30px;">CHATLLM</span><br>
+                <span style="font-size: 1rem; color: #fff; margin: 0 30px;">Make AI yours</span>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="llm.html">LLM</a>
+            <a href="chat.html">Chat</a>
+            <a href="sign-in.html" class="sign-in-button" style="background-color: #007bff; color: white; padding: 5px 10px; border-radius: 5px; text-decoration: none;">Sign In</a>
+        </nav>
+    </header>
+    <div class="black-margin"></div>
+    <div class="container">
+        <h1>About Us</h1>
+        <p style="margin-top: 30px;">Welcome to CHATLLM! We are dedicated to providing the best AI-driven conversational experiences. Our team is passionate about leveraging the latest advancements in language model technology to create tools that empower users and enhance communication.</p>
+        <p>At CHATLLM, we believe in the potential of AI to transform the way we interact with technology. Our mission is to make AI accessible and useful for everyone, whether you're a developer, a business, or just someone curious about the future of communication.</p>
+        <p>Join us on this exciting journey as we explore the endless possibilities of AI-driven conversations!</p>
+    
+        <h2 style="margin-top: 100px;">Why Choose Us?</h2>
+        <p>We are committed to providing top-notch AI solutions that are user-friendly, efficient, and tailored to meet the needs of our users. Our platform is designed with you in mind, ensuring a seamless experience from start to finish.</p>
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="videos/about us.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Grid Section -->
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>Our Vision</h3>
+                <p>To empower individuals and organizations through innovative AI solutions.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Our Mission</h3>
+                <p>To make AI accessible and beneficial for everyone.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Our Values</h3>
+                <p>Integrity, Innovation, and Inclusivity.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Our Team</h3>
+                <p>A diverse group of experts dedicated to advancing AI technology.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-links">
+        <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Careers</a>
+            <a href="#">Newsroom</a>
+            <a href="#">Pressroom</a>
+        </div>
+        <div>
+            <h4>ChatLLM</h4>
+            <a href="#">Get ChatLLM</a>
+            <a href="llm.html">Downloads</a>
+            <a href="chat.html">Chat</a>
+            <a href="about.html">Partner with Us</a>
+        </div>
+        <div>
+            <h4>Our AI</h4>
+            <a href="llm.html">Platform Apps</a>
+            <a href="contact.html">FAQ</a>
+            <a href="contact.html">Shipping & Return</a>
+            <a href="contact.html">Customer Support</a>
+        </div>
+        <div>
+            <h4>Developer</h4>
+            <a href="llm">Downloads</a>
+            <a href="#">CHATLLM™ SDK</a>
+            <a href="#">CHATLLM SDK Guide</a>
+            <a href="readme.md">Documentation</a> <!-- Added Documentation link -->
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Forum</a>
+            <a href="contact.html">Warranty</a>
+        </div>
+    </div>
+    <footer class="footer-bottom">
+        <p>© 2024 CHATLLM Inc. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@milks0ju314">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=100022445090749">Facebook</a>
+            <a href="https://www.twitch.tv/comfyws">Twitch</a>
+            <a href="https://open.spotify.com/user/31usixp2lbqyluyjpdaya32kw6yu">Spotify</a>
+            <a href="https://www.instagram.com/smoooth.y?igsh=cTB4d3ZreGRwa25x">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* Updated styles to match the provided screenshot */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden; /* Disable scrollbars */
+}
+
+/* Adjust header styles to position ChatLLM on the left */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px 20px;
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin-left: 10px; /* Add spacing between the button and the title */
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+header .toggle-sidebar {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+header .toggle-sidebar:hover {
+    background-color: #333;
+}
+
+.sidebar {
+    width: 250px; /* Default sidebar width */
+    background-color: #111;
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #333;
+}
+
+.new-chat-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.new-chat-button:hover {
+    background-color: #ffffff;
+}
+
+/* Style the Gemini dropdown button to match the New Chat button */
+#model-selector {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+#model-selector:hover {
+    background-color: #ffffff;
+}
+
+.chat-container {
+    margin-left: 250px; /* Default margin for chat container */
+    width: calc(100% - 250px); /* Adjust width to account for sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}
+
+.chat-header {
+    padding: 10px;
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Add scrollbar to chat box */
+.chat {
+    max-height: 800px; /* Set a fixed maximum height for the chat box */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Customize scrollbar for chat box */
+.chat::-webkit-scrollbar {
+    width: 8px; /* Set scrollbar width */
+}
+
+.chat::-webkit-scrollbar-track {
+    background: #111; /* Dark background for scrollbar track */
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: #333; /* Darker thumb for scrollbar */
+    border-radius: 4px; /* Rounded edges for minimalist look */
+}
+
+.chat::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Slightly lighter on hover */
+}
+
+/* Position the input area at the bottom */
+.input-area {
+    position: fixed;
+    bottom: 0;
+    left: 250px; /* Adjust for sidebar width */
+    width: calc(100% - 250px); /* Full width minus sidebar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #111;
+    border-top: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Add chat bubble styles */
+.chat .model p {
+    background: #574dda;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px; /* Adjust border radius for a cleaner look */
+    margin: 10px 0; /* Maintain spacing between messages */
+    max-width: 100%; /* Allow chat bubbles to span the full width */
+    word-wrap: break-word;
+    align-self: flex-start;
+    margin-left: auto; /* Center align model messages */
+    margin-right: auto;
+}
+
+/* Align user responses to the right side */
+.chat .user p {
+    background: #cccbcb;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 10px; /* Adjust border radius for a cleaner look */
+    margin: 10px 0; /* Maintain spacing between messages */
+    max-width: 100%; /* Allow chat bubbles to span the full width */
+    word-wrap: break-word;
+    align-self: flex-end; /* Align user messages to the right */
+    text-align: right; /* Align text within the bubble to the right */
+    margin-left: auto; /* Center align user messages */
+    margin-right: auto; /* Center align user messages */
+}
+
+/* Add styles for short chat bubbles */
+.chat .model p.short, .chat .user p.short {
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Adjust short chat bubbles to match the provided design */
+.chat .model p.short {
+    max-width: 100%; /* Allow full width for short model messages */
+    white-space: normal; /* Allow wrapping for longer messages */
+    margin-right: auto; /* Align to the left side */
+    margin-left: auto; /* Center align model messages */
+    text-align: center; /* Center text within the bubble */
+}
+
+.chat .user p.short {
+    max-width: 100%; /* Allow full width for short user messages */
+    white-space: normal; /* Allow wrapping for longer messages */
+    margin-left: auto; /* Center align user messages */
+    margin-right: auto; /* Center align user messages */
+    text-align: center; /* Center text within the bubble */
+}
+
+/* Use full length for short user responses */
+.chat .user p.short {
+    max-width: 100%; /* Allow short user messages to span the full width */
+    white-space: normal; /* Allow wrapping for longer messages */
+    margin-left: 0; /* Reset margin to align with full width */
+}

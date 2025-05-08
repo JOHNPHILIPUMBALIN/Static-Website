@@ -1,0 +1,558 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px; /* Increased padding for a larger header margin */
+    background-color: rgba(17, 17, 17, 0.9); /* Slightly transparent header */
+    position: sticky; /* Makes the header follow you */
+    top: 0;
+    z-index: 1000;
+    width: 100%; /* Stretch header to full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    transition: background-color 0.3s ease; /* Smooth transition for header background */
+}
+header:hover {
+    background-color: rgba(17, 17, 17, 1); /* Darken header on hover */
+}
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.header-left h1 {
+    font-size: 1.5rem; /* Reduced size */
+    margin: 0 0 0 10px;
+    color: #fff;
+}
+.header-left h1, .header-left div span {
+    margin: 0 30px; /* Further increased text margin inside the header */
+}
+.header-left img {
+    width: 50px; /* Reduced size */
+    height: 50px; /* Reduced size */
+    transition: transform 0.3s ease; /* Smooth transition for logo */
+}
+.header-left img:hover {
+    transform: scale(1.1); /* Slightly enlarge logo on hover */
+}
+nav a {
+    margin: 0 30px; /* Further increased margin for navigation links */
+    text-decoration: none;
+    color: #fff; /* White text color */
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth transition for link color */
+}
+nav a:hover {
+    color: #b19cd9; /* Light purple hover color */
+    transform: scale(1.05); /* Slightly enlarge links on hover */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+.container h1 {
+    font-size: 5.5rem; /* Increased size */
+    margin: 0;
+    color: #fff;
+}
+.container p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #fff;
+}
+.container img {
+    width: 300px; /* Significantly increased size */
+    height: 300px; /* Significantly increased size */
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+.container img.scrolled {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg); /* 3D-like effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+.price {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+.buttons {
+    margin-top: 20px;
+}
+.buttons button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Ensure buttons look like links */
+    display: inline-block;
+}
+.buttons button:hover {
+    background-color: #007bff;
+}
+.footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center; /* Center the footer text */
+    padding: 20px 0;
+}
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 3.5rem;
+    }
+    .container p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    .buttons button {
+        padding: 10px 20px;
+    }
+}
+.newsletter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #111;
+    color: #fff;
+    margin: 0 80px; /* Align with header side margins */
+}
+.newsletter-section .left {
+    max-width: 50%;
+}
+.newsletter-section .left h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.newsletter-section .left p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+.newsletter-section .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.newsletter-section .right h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.newsletter-section .right input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.newsletter-section .right button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff; /* Consistent button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.newsletter-section .right button:hover {
+    background-color: #007bff;
+}
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #111;
+    color: #ccc;
+}
+.footer-links div {
+    max-width: 20%;
+}
+.footer-links h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.footer-links a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: #007bff;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #ccc;
+}
+.footer-bottom p {
+    margin: 0;
+}
+.footer-bottom .social-icons {
+    margin-top: 10px;
+}
+.footer-bottom .social-icons a {
+    margin: 0 10px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.footer-bottom .social-icons a:hover {
+    color: #007bff;
+}
+.black-margin {
+    background-color: #000;
+    height: 50px; /* Height of the black margin */
+}
+.accessories-section {
+    padding: 50px 80px;
+    background-color: #000;
+    color: #fff;
+}
+.accessories-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.accessories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.accessory-item {
+    background-color: #111;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(50% - 40px);
+    box-sizing: border-box;
+    color: #fff;
+}
+.accessory-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.accessory-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.accessory-item .price {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.accessory-item button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b19cd9;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.accessory-item button:hover {
+    background-color: #a18cc9;
+}
+.accessory-image {
+    text-align: center;
+    margin-top: 20px;
+}
+.accessory-image img {
+    max-width: 100%;
+    height: auto;
+}
+.features-section {
+    padding: 50px 80px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.feature-item {
+    flex: 1 1 calc(25% - 40px); /* Adjusted size to make boxes smaller */
+    margin: 20px;
+    text-align: center;
+    background-color: #222;
+    padding: 15px; /* Reduced padding */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.feature-item img {
+    width: 60px; /* Reduced size for icons */
+    height: 60px;
+    margin-bottom: 15px; /* Reduced margin */
+}
+.feature-item h3 {
+    font-size: 1.3rem; /* Reduced font size */
+    margin-bottom: 8px;
+}
+.feature-item p {
+    font-size: 0.9rem; /* Reduced font size */
+    line-height: 1.4;
+    color: #ccc;
+}
+.feature-item a {
+    display: inline-block;
+    margin-top: 15px; /* Reduced margin */
+    padding: 8px 15px; /* Reduced padding */
+    background-color: #b19cd9;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem; /* Reduced font size */
+}
+.feature-item a:hover {
+    background-color: #a18cc9;
+}
+button, .feature-item a {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Consistent button color */
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+button:hover, .feature-item a:hover {
+    background-color: #007bff; /* Consistent hover color */
+}
+
+/* Updated button styles */
+.buttons button, .feature-item a, .accessory-item button {
+    background-color: #007bff; /* Updated button color */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buttons button:hover, .feature-item a:hover, .accessory-item button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 1024px) {
+    header {
+        padding: 10px 30px; /* Reduce padding for smaller screens */
+    }
+    .header-left h1 {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+    .header-left img {
+        width: 40px; /* Adjust logo size */
+        height: 40px;
+    }
+    nav a {
+        margin: 0 15px; /* Reduce spacing between navigation links */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+    .container h1 {
+        font-size: 4rem; /* Adjust heading size */
+    }
+    .container img {
+        width: 200px; /* Adjust image size */
+        height: 200px;
+    }
+    .container p {
+        font-size: 1rem; /* Adjust paragraph size */
+        padding: 0 10px; /* Add padding for better readability */
+    }
+    .buttons button {
+        padding: 8px 15px; /* Adjust button padding */
+        font-size: 0.9rem; /* Adjust button font size */
+    }
+    .features-grid {
+        flex-wrap: wrap; /* Stack features vertically */
+    }
+    .feature-item {
+        flex: 1 1 calc(50% - 20px); /* Adjust feature item size */
+    }
+    .accessories-grid {
+        flex-wrap: wrap; /* Stack accessories vertically */
+    }
+    .accessory-item {
+        flex: 1 1 calc(100% - 20px); /* Full width for accessories */
+    }
+}
+
+/* Responsive styles for phones */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+    .header-left {
+        margin-bottom: 10px; /* Add spacing between logo and navigation */
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap; /* Wrap navigation links */
+        gap: 10px; /* Add spacing between links */
+    }
+    .container h1 {
+        font-size: 3rem; /* Adjust heading size */
+    }
+    .container img {
+        width: 150px; /* Adjust image size */
+        height: 150px;
+    }
+    .container p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+    .buttons button {
+        padding: 8px 10px; /* Adjust button padding */
+        font-size: 0.8rem; /* Adjust button font size */
+    }
+    .features-grid {
+        flex-direction: column; /* Stack features vertically */
+    }
+    .feature-item {
+        flex: 1 1 100%; /* Full width for feature items */
+        margin: 10px 0; /* Add spacing between items */
+    }
+    .accessories-grid {
+        flex-direction: column; /* Stack accessories vertically */
+    }
+    .accessory-item {
+        flex: 1 1 100%; /* Full width for accessories */
+        margin: 10px 0; /* Add spacing between items */
+    }
+    .newsletter-section {
+        flex-direction: column; /* Stack newsletter content vertically */
+        align-items: flex-start;
+        padding: 20px; /* Adjust padding */
+    }
+    .newsletter-section .left,
+    .newsletter-section .right {
+        max-width: 100%; /* Full width for sections */
+    }
+    .newsletter-section .right input[type="email"] {
+        width: 100%; /* Full width for input */
+    }
+    .footer-links {
+        flex-direction: column; /* Stack footer links vertically */
+        align-items: flex-start;
+        padding: 20px; /* Adjust padding */
+    }
+    .footer-links div {
+        max-width: 100%; /* Full width for footer sections */
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+}
+
+/* Add transition for smooth hover effects */
+.buttons button, .feature-item a, .accessory-item button {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+}
+
+.buttons button:hover, .feature-item a:hover, .accessory-item button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Add hover effects for feature items and accessory items */
+.feature-item:hover, .accessory-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Ensure all links are clickable with pointer cursor */
+nav a, .feature-item a, .accessory-item button {
+    cursor: pointer; /* Change cursor to pointer for clickable items */
+}
+
+/* Add transition for images */
+.container img, .feature-item img, .accessory-image img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for images */
+}
+
+.container img:hover, .feature-item img:hover, .accessory-image img:hover {
+    transform: scale(1.1); /* Slightly enlarge images on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Apply fade-in animation to all text elements */
+h1, h2, h3, h4, p, span {
+    animation: fadeIn 0.5s ease forwards; /* Fade-in effect */
+}
+
+/* Add expand effect on hover for all text elements */
+h1, h2, h3, h4, p, span {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, p:hover, span:hover {
+    transform: scale(1.1); /* Slightly enlarge text on hover */
+}
+
+/* Add expand effect on hover for all header elements */
+h1, h2, h3, h4 {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover {
+    transform: scale(1.1); /* Slightly enlarge headers on hover */
+}
+
+/* Add expand effect on hover for all paragraph elements */
+p {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+p:hover {
+    transform: scale(1.05); /* Slightly enlarge paragraphs on hover */
+}

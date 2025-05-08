@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHATLLM</title>
+    <link rel="stylesheet" href="../index.css">
+    <script>
+        document.addEventListener('scroll', () => {
+            const logo = document.querySelector('.container img');
+            if (window.scrollY > 50) {
+                logo.classList.add('scrolled');
+            } else {
+                logo.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <style>
+        button {
+            background-color: #007bff; /* Updated button color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="../images/logo.png" alt="Logo" style="width: 50px; height: 50px;">
+            <div style="margin-left: 10px;">
+                <span style="font-size: 1.5rem; font-weight: bold; color: #fff; margin: 0 30px;">CHATLLM</span><br>
+                <span style="font-size: 1rem; color: #fff; margin: 0 30px;">Make AI yours</span>
+            </div>
+        </div>
+        <nav>
+            <a href="/login/index.html">Home</a>
+            <a href="/login/about.html">About</a>
+            <a href="/login/contact.html">Contact</a>
+            <a href="/login/llm.html">LLM</a>
+            <a href="/chat.html">Chat</a>
+            <a href="../index.html" class="sign-out-button" style="background-color: #ff4d4d; color: white; padding: 5px 10px; border-radius: 5px; text-decoration: none;">Sign Out</a>
+        </nav>
+    </header>
+    <div class="black-margin"></div> <!-- Black margin above the container -->
+    <div class="container">
+        <h1>CHATLLM</h1>
+        <img src="../images/logo.png" alt="Logo">
+        <p>Welcome to CHATLLM!<br>Your go-to platform for interactive and intelligent conversations powered by the latest in language model technology. Explore the features and connect with our community to enhance your experience.</p>
+        <div class="buttons">
+        </div>
+    </div>
+    <div class="features-section">
+        <h2>Features on the Website</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="../images/download-icon.png" alt="Downloadable LLMs">
+                <h3>Downloadable LLMs</h3>
+                <p>Access and download the latest language models directly to your device for offline use.</p>
+                <a href="llm.html">Learn More</a>
+            </div>
+            <div class="feature-item">
+                <img src="../images/chat-icon.png" alt="Chat with LLM">
+                <h3>Chat with LLM</h3>
+                <p>Engage in real-time conversations with advanced language models tailored to your needs.</p>
+                <a href="/sign-in.html">Start Chatting</a>
+            </div>
+            <div class="feature-item">
+                <img src="../images/pick-icon.png" alt="Pick Your LLMs">
+                <h3>Pick Your LLMs</h3>
+                <p>Choose from a variety of language models optimized for different tasks and industries.</p>
+                <a href="about.html">Explore Options</a>
+            </div>
+            <div class="feature-item">
+                <img src="../images/integration-icon.png" alt="Seamless Integration">
+                <h3>Seamless Integration</h3>
+                <p>Integrate LLMs into your applications with our easy-to-use APIs and SDKs.</p>
+                <a href="/llm.html">View APIs</a>
+            </div>
+            <div class="feature-item">
+                <img src="../images/analytics-icon.png" alt="Analytics Dashboard">
+                <h3>Analytics Dashboard</h3>
+                <p>Track and analyze the performance of your LLMs with our intuitive dashboard.</p>
+                <a href="/sign-in.html">View Dashboard</a>
+            </div>
+            <div class="feature-item">
+                <img src="../images/support-icon.png" alt="24/7 Support">
+                <h3>24/7 Support</h3>
+                <p>Get round-the-clock support from our team of experts to ensure smooth operations.</p>
+                <a href="contact.html">Contact Support</a>
+            </div>
+        </div>
+    </div>
+    <div class="accessories-section">
+        <h2>AI Tools for Your Team</h2>
+        <div class="accessories-grid">
+            <div class="accessory-item">
+                <h3>One-click install</h3>
+                <p>ChatLLM allows you to easily download and run an LLM with no additional setup or programs.</p>
+            </div>
+            <div class="accessory-item">
+                <h3>Local by default</h3>
+                <p>ChatLLM is designed to be local by default. Everything from the model, documents, chats, all stored locally on your desktop.</p>
+            </div>
+            <div class="accessory-item">
+                <h3>No account needed</h3>
+                <p>ChatLLM is not SaaS. No signup is required to get the full suite of tools running locally.</p>
+            </div>
+            <div class="accessory-item">
+                <h3>Compatible</h3>
+                <p>ChatLLM works on any operating system. MacOS, Windows, or Linux - you can use ChatLLM.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Join us today and start exploring the endless possibilities of AI-driven conversations.<br>
+        Whether you're looking to learn, share, or connect, CHATLLM offers a platform that caters to all your needs.
+    </div>
+    <div class="newsletter-section">
+        <div class="left">
+            <h2>Stay up-to-date</h2>
+            <p>Sign up and be the first to know about company news, product updates, our latest innovations, and more.</p>
+            <a href="#" style="color: #007bff; text-decoration: underline;">Visit our Newsroom</a>
+        </div>
+        <div class="right">
+            <h3>Our Newsletter</h3>
+            <input type="email" placeholder="Your email">
+            <button>Subscribe</button>
+        </div>
+    </div>
+    <div class="footer-links">
+        <div>
+            <h4>Company</h4>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Careers</a>
+            <a href="#">Newsroom</a>
+            <a href="#">Pressroom</a>
+        </div>
+        <div>
+            <h4>ChatLLM</h4>
+            <a href="#">Get ChatLLM</a>
+            <a href="../llm.html">Downloads</a>
+            <a href="../chat.html">Chat</a>
+            <a href="../about.html">Partner with Us</a>
+        </div>
+        <div>
+            <h4>Our AI</h4>
+            <a href="../llm.html">Platform Apps</a>
+            <a href="../contact.html">FAQ</a>
+            <a href="../contact.html">Shipping & Return</a>
+            <a href="../contact.html">Customer Support</a>
+        </div>
+        <div>
+            <h4>Developer</h4>
+            <a href="../llm">Downloads</a>
+            <a href="#">CHATLLM™ SDK</a>
+            <a href="#">CHATLLM SDK Guide</a>
+            <a href="../readme.md">Documentation</a> <!-- Added Documentation link -->
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <a href="../contact.html">Contact Us</a>
+            <a href="../contact.html">Forum</a>
+            <a href="../contact.html">Warranty</a>
+        </div>
+    </div>
+    <footer class="footer-bottom">
+        <p>© 2024 CHATLLM Inc. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@milks0ju314">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=100022445090749">Facebook</a>
+            <a href="https://www.twitch.tv/comfyws">Twitch</a>
+            <a href="https://open.spotify.com/user/31usixp2lbqyluyjpdaya32kw6yu">Spotify</a>
+            <a href="https://www.instagram.com/smoooth.y?igsh=cTB4d3ZreGRwa25x">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

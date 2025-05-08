@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - CHATLLM</title>
+    <link rel="stylesheet" href="sign-in.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Sign In</h1>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <div id="loginMessage"></div> <!-- Message container for login feedback -->
+        <a href="sign-up.html">Don't have an account? Sign Up</a>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            const loginMessageDiv = document.getElementById('loginMessage');
+
+            console.log('Attempting login with email:', email);
+
+            // Retrieve user data
+            const userData = JSON.parse(localStorage.getItem(email));
+
+            if (!userData) {
+                loginMessageDiv.textContent = 'User not found';
+                console.log('User not found in localStorage');
+                return;
+            }
+
+            if (userData.password !== password) {
+                loginMessageDiv.textContent = 'Incorrect password';
+                console.log('Incorrect password');
+                return;
+            }
+
+            loginMessageDiv.style.color = 'green';
+            loginMessageDiv.textContent = 'Login successful';
+            console.log('Login successful');
+            setTimeout(() => {
+                window.location.href = '/Umbalin_Activity1/Umbalin_Act1.html'; // Redirect to the next page
+            }, 2000);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const signInForm = document.querySelector('form'); // Assuming the sign-in form is present
+            signInForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent actual form submission
+
+                // Simulate successful login
+                const isLoggedIn = true;
+
+                if (isLoggedIn) {
+                    window.location.href = 'login/index.html'; // Redirect to the duplicate index.html in the login folder
+                }
+            });
+        });
+    </script>
+</body>
+</html>
